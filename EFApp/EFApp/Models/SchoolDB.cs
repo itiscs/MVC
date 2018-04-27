@@ -7,7 +7,7 @@ using System.Web;
 
 namespace EFApp.Models
 {
-    public class SchoolInitializer : DropCreateDatabaseIfModelChanges<SchoolDB>
+    public class SchoolInitializer : DropCreateDatabaseAlways<SchoolDB>
     {
         protected override void Seed(SchoolDB context)
         {
@@ -61,7 +61,7 @@ namespace EFApp.Models
     public class SchoolDB: DbContext
     {
 
-        public SchoolDB() : base("MySchoolContext")
+        public SchoolDB() : base("MySchoolDB")
         {
         }
 

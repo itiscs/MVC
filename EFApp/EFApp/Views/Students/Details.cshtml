@@ -35,6 +35,34 @@
         </dd>
 
     </dl>
+    <table class="table">
+        <tr>
+            <th>
+                Дисциплина
+            </th>
+            <th>
+                Оценка
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Enrollments)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grade)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+
+
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |

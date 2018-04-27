@@ -28,7 +28,32 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<table class="table">
+    <tr>
+        <th>
+            Студент
+        </th>
+        <th>
+            Оценка
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Enrollments)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+        </tr>
+    }
+
+    </table>
+
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
